@@ -5,7 +5,7 @@
   <h1 class="page-header">{$post.title}</h1>{\n}
   <p>
     {if $post.tags}
-      Tagged as {foreach $tag in $post.tags}
+      Теги {foreach $tag in $post.tags}
         <a href="{$config.domain}/{$tag.url}">{$tag.name}</a>{nil}
           {if not isLast($tag)},{sp}{/if}
       {/foreach}
@@ -13,15 +13,15 @@
   </p>
   <p class="date-posted">
     {if $post.date}
-      Written on {$post.date}
+      Записано {$post.date}
     {/if}
   </p>
 
   {$post.text |noAutoescape}
-  
+
   <ul class="pager">
-    {if $prev}<li class="previous"><a href="{$config.domain}/{$prev.url}">&larr; Previous</a></li>{/if}{\n}
-    {if $next}<li class="next"><a href="{$config.domain}/{$next.url}">Next &rarr;</a></li>{/if}{\n}
+    {if $prev}<li class="previous"><a href="{$config.domain}/{$prev.url}">&larr; Сюда</a></li>{/if}{\n}
+    {if $next}<li class="next"><a href="{$config.domain}/{$next.url}">Туда &rarr;</a></li>{/if}{\n}
   </ul>
 </div>{\n}
 {/template}
