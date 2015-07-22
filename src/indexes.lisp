@@ -36,7 +36,7 @@
   "Return an index of all CONTENT matching the given TAG."
   (make-instance 'tag-index :slug (tag-slug tag) :name (tag-name tag)
                  :content (remove-if-not (lambda (x) (tag-p tag x)) content)
-                 :title (format nil "Записи с тегом ~a" (tag-name tag))))
+                 :title (format nil "Записи с тегом '~a'" (tag-name tag))))
 
 (defmethod publish ((doc-type (eql (find-class 'tag-index))))
   (dolist (index (find-all 'tag-index))
