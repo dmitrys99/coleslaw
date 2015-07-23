@@ -15,6 +15,7 @@
    (separator       :initarg :separator      :reader separator)
    (sitenav         :initarg :sitenav        :reader sitenav)
    (staging-dir     :initarg :staging-dir    :reader staging-dir)
+   (assets-dir      :initarg :assets-dir     :reader assets-dir)
    (theme           :initarg :theme          :reader theme)
    (title           :initarg :title          :reader title))
   (:default-initargs
@@ -26,7 +27,8 @@
    :lang         "en"
    :page-ext     "html"
    :separator    ";;;;;"
-   :staging-dir  "/tmp/coleslaw"))
+   :staging-dir  "/tmp/coleslaw"
+   :assets-dir   "assets"))
 
 (defun dir-slot-reader (config name)
   "Take CONFIG and NAME, and return a directory pathname for the matching SLOT."

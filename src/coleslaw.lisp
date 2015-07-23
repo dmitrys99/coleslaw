@@ -29,7 +29,7 @@ in REPO-DIR. Optionally, OLDREV is the revision prior to the last push."
     (dolist (dir (list (app-path "themes/~a/css" (theme *config*))
                        (app-path "themes/~a/img" (theme *config*))
                        (app-path "themes/~a/js" (theme *config*))
-                       (merge-pathnames "static" (repo-dir *config*))))
+                       (merge-pathnames (assets-dir *config*) (repo-dir *config*))))
       (when (probe-file dir)
         (run-program "rsync --delete -raz ~a ." dir)))
     (do-subclasses (ctype content)
